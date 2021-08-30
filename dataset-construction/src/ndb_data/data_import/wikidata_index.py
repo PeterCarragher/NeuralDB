@@ -85,6 +85,9 @@ if __name__ == "__main__":
 
     _tqdm_iter = tqdm(index_dump(dump), total=90e6)
     for w_id, e_name, sitelinks, enwiki, props, prop_dict in _tqdm_iter:
+        sl_values = list(sitelinks.values()) if sitelinks else []
+
+        
         batch.append(
             {
                 "wikidata_id": w_id,
@@ -92,7 +95,7 @@ if __name__ == "__main__":
                 "english_wiki": enwiki,
                 "property_types": props,
                 "properties": prop_dict,
-                "sitelinks": list(sitelinks.values()),
+                "sitelinks": sl_values,
             }
         )
 

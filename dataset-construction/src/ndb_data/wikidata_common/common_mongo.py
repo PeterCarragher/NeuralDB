@@ -30,6 +30,6 @@ class MongoDataSource(ABC):
         port = os.getenv("MONGO_PORT", "27017")
         db = os.getenv("MONGO_DB", "wikidata")
 
-        client = pymongo.MongoClient(f"mongodb://{user}:{password}@{host}:{port}")
+        client = pymongo.MongoClient(f"mongodb://{host}:{port}")
 
         self.db = client[db]
