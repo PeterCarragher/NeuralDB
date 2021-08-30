@@ -1,2 +1,4 @@
 .DS_Store
 .idea
+/dataset-construction/*.bz2
+__pycache__/
